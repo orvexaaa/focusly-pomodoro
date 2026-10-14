@@ -1,0 +1,406 @@
+
+/* =========================
+   FOCUSLY — DESIGN SYSTEM
+========================= */
+
+:root {
+    --bg-primary: #0b0b10;
+    --bg-secondary: #12121a;
+    --bg-card: #171720;
+    --bg-hover: #222230;
+
+    --text-primary: #f4f4f8;
+    --text-secondary: #9292a5;
+
+    --accent: #9b8aff;
+    --accent-hover: #b0a3ff;
+    --accent-soft: rgba(155, 138, 255, 0.12);
+
+    --border: rgba(255, 255, 255, 0.08);
+
+    --radius-md: 14px;
+    --radius-lg: 22px;
+
+    --transition: 0.25s ease;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Inter, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(111, 87, 210, 0.12),
+            transparent 40%
+        ),
+        var(--bg-primary);
+
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+    padding: 28px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.navigation {
+    display: flex;
+    gap: 32px;
+}
+
+.navigation a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color var(--transition);
+}
+
+.navigation a:hover {
+    color: var(--text-primary);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    width: min(720px, 90%);
+    margin: 80px auto 48px;
+    text-align: center;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    line-height: 1.08;
+    letter-spacing: -3px;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.description {
+    max-width: 450px;
+    margin: 22px auto 0;
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* =========================
+   TIMER CARD
+========================= */
+
+.timer-card {
+    width: min(520px, 90%);
+    margin: 0 auto;
+    padding: 30px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.035),
+        rgba(255, 255, 255, 0.01)
+    );
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+/* Timer mode buttons */
+
+.timer-modes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    padding: 6px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+}
+
+.mode-btn {
+    flex: 1;
+    min-width: 90px;
+
+    padding: 11px 12px;
+    border: none;
+    border-radius: 10px;
+
+    background: transparent;
+    color: var(--text-secondary);
+
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition:
+        background var(--transition),
+        color var(--transition);
+}
+
+.mode-btn:hover {
+    color: var(--text-primary);
+}
+
+.mode-btn.active {
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+/* Timer display */
+
+.timer-display {
+    margin: 42px 0 12px;
+}
+
+.timer-display span {
+    font-size: clamp(4rem, 13vw, 6.5rem);
+    font-weight: 700;
+    letter-spacing: -5px;
+    line-height: 1;
+
+    font-variant-numeric: tabular-nums;
+}
+
+.session-label {
+    margin-top: 24px;
+    color: var(--text-secondary);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   TIMER CONTROLS
+========================= */
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.start-btn,
+.reset-btn {
+    min-height: 48px;
+    padding: 0 24px;
+
+    border-radius: 12px;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        border-color var(--transition);
+}
+
+.start-btn {
+    min-width: 150px;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #111018;
+}
+
+.start-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.reset-btn {
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.reset-btn:hover {
+    background: var(--bg-hover);
+    transform: translateY(-2px);
+}
+
+.start-btn:focus-visible,
+.reset-btn:focus-visible,
+.mode-btn:focus-visible,
+.navigation a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* =========================
+   STATISTICS
+========================= */
+
+.statistics {
+    width: min(520px, 90%);
+    margin: 20px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.stat-card {
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    transition:
+        border-color var(--transition),
+        transform var(--transition);
+}
+
+.stat-card:hover {
+    border-color: rgba(155, 138, 255, 0.35);
+    transform: translateY(-3px);
+}
+
+.stat-card h2 {
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.stat-card p {
+    margin-top: 5px;
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 48px 20px 28px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 480px) {
+    .header {
+        padding: 20px 0;
+    }
+
+    .navigation {
+        gap: 16px;
+    }
+
+    .hero {
+        margin-top: 55px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1.5px;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .timer-card {
+        padding: 20px 14px;
+    }
+
+    .timer-display {
+        margin-top: 36px;
+    }
+
+    .timer-display span {
+        letter-spacing: -3px;
+    }
+
+    .mode-btn {
+        min-width: 0;
+        padding: 10px 6px;
+        font-size: 0.72rem;
+    }
+
+    .start-btn,
+    .reset-btn {
+        padding: 0 16px;
+    }
+
+    .start-btn {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .stat-card {
+        padding: 18px 14px;
+    }
+
+    .stat-card h2 {
+        font-size: 1.35rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
